@@ -8,12 +8,14 @@
         // var wantUpper = confirm("Do you want to use uppercase characters?");
         // var wantNumber = confirm("Do you want to use numberical characters?");
         // var wantSpecial = confirm("Do you want to use special characters?");
+        // var characterCount = prompt("How many characters do you want?")
 
         //HARD CODED FOR TESTING - REMOVE AT THE END
         var wantLower = true;
         var wantUpper = true;
         var wantNumber = true;
         var wantSpecial = true;
+        var characterCount = 20;
 
         //Define var array as an empty array
         var array = [];
@@ -49,9 +51,11 @@
         var password = randomnum();
 
         //Generates and addes to the password string more random characters
-        for (var i = 1; i < 10; i++)    {
-            //addes the next character to password
-            password += randomnum();
+        function makePassword(count)   {
+            for (var i = 1; i < count; i++)    {
+                //addes the next character to password
+                password += randomnum();
+            }
+            return password;
         }
-
-        console.log(password);
+        console.log(makePassword(characterCount));
