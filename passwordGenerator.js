@@ -9,10 +9,6 @@
         var special = ["+", "-", "&", "|", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":"];
         var array = [lower, upper, number, special];
 
-        console.log(upper);
-        
-
-
         function randomnum()  {
             //Sets var randArray to a random index of 0-3; relates to arrays: lower, upper, number, special
             var randArray = Math.floor((Math.random() * array.length));
@@ -21,3 +17,13 @@
             //returns the value in var randArray with an index of var random
             return array[randArray][random];
         }
+
+        //Sets the first random character of the password to avoid undefined & NaN in the for loop
+        var password = randomnum();
+
+        //Generates and addes to the password string more random characters
+        for (var i = 1; i < 10; i++)    {
+            password += randomnum();
+        }
+
+        console.log(password);
