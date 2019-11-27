@@ -15,6 +15,7 @@
         // var characterCount = prompt("How many characters do you want?")
 
         //HARD CODED FOR TESTING - REMOVE AT THE END
+        //Also need to code in that at least 2 should be selected
         var wantLower = true;
         var wantUpper = true;
         var wantNumber = true;
