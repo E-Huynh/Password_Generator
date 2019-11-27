@@ -64,3 +64,67 @@
             return password;
         }
         console.log(makePassword(characterCount));
+
+        // Testing javascript
+        //HANDLES THE FUNCTIONALITY OF THE BUTTONS, WRITE MORE DRY CODE
+        //INCLUDE PARAMETERS TO MAKE SURE AT LEAST 2 ARE SET TO TRUE
+       
+        //sets selector to the first button in a div
+        var lowerButton = document.querySelector(".lowerbtn");
+        var upperButton = document.querySelector(".upperbtn");
+        var numberButton = document.querySelector(".numberbtn");
+        var specialButton = document.querySelector(".specialbtn");
+
+        //Lowercase character button functionality
+        //tells JS to run function on a click
+        lowerButton.addEventListener("click", function() {
+            //toggles the class enabled on/off; Styles the btn
+            lowerButton.classList.toggle("disabled");
+            //changed button text to match var wantLower;
+                if (wantLower === true) {
+                    lowerButton.innerHTML = "Lowercase <br> Disabled";
+                }
+                else    {
+                    lowerButton.innerHTML = "Lowercase";
+                }
+            //changes the variable to be include/excluded from password generation
+            wantLower = !wantLower;
+            //logs the value of want Lower
+            console.log("wantLower = " + wantLower);
+        })
+        //Uppercase character button functionality
+        upperButton.addEventListener("click", function() {
+            upperButton.classList.toggle("disabled");
+                if (wantUpper === true) {
+                    upperButton.innerHTML = "Uppercase <br> Disabled";
+                }
+                else    {
+                    upperButton.innerHTML = "Uppercase";
+                }
+            wantUpper = !wantUpper;
+            console.log("wantUpper = " + wantUpper);
+        })
+        //Number character button functionality
+        numberButton.addEventListener("click", function() {
+            numberButton.classList.toggle("disabled");
+                if (wantNumber === true) {
+                    numberButton.innerHTML = "Numbers <br> Disabled";
+                }
+                else    {
+                    numberButton.innerHTML = "Numbers";
+                }
+            wantNumber = !wantNumber;
+            console.log("wantNumber = " + wantNumber);
+        })
+        //Special character button functionality
+        specialButton.addEventListener("click", function() {
+            specialButton.classList.toggle("disabled");
+                if (wantSpecial === true) {
+                    specialButton.innerHTML = "Special <br> Disabled";
+                }
+                else    {
+                    specialButton.innerHTML = "Special";
+                }
+            wantSpecial = !wantSpecial;
+            console.log("wantSpecial = " + wantSpecial);
+        })
