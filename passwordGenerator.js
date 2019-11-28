@@ -56,7 +56,6 @@
         var password = randomnum();
         
         function resetPassword() {
-            console.log(password);
             password = randomnum();
         }
 
@@ -66,6 +65,9 @@
                 //addes the next character to password
                 password += randomnum();
             }
+            //Displays generated password in p #passwordDisplay
+            document.querySelector("#passwordDisplay").innerText = password;
+            //Resets the password
             return resetPassword();
         }
         
