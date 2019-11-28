@@ -4,7 +4,7 @@
         
         var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
         var special = ["+", "-", "&", "|", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":"];
 
         //User input on which characters they want.
@@ -20,7 +20,7 @@
         var wantUpper = true;
         var wantNumber = true;
         var wantSpecial = true;
-        var characterCount = 20;
+        var characterCount = 10;
 
         //Define var array as an empty array
         var array = [];
@@ -54,16 +54,21 @@
 
         //Sets the first random character of the password to avoid undefined & NaN in the for loop
         var password = randomnum();
+        
+        function resetPassword() {
+            console.log(password);
+            password = randomnum();
+        }
 
         //Generates and addes to the password string more random characters
-        function makePassword(count)   {
-            for (var i = 1; i < count; i++)    {
+        function makePassword(characterCount)   {
+            for (var i = 1; i < characterCount; i++)    {
                 //addes the next character to password
                 password += randomnum();
             }
-            return password;
+            return resetPassword();
         }
-        console.log(makePassword(characterCount));
+        
 
         // Testing javascript
         //HANDLES THE FUNCTIONALITY OF THE BUTTONS, WRITE MORE DRY CODE
