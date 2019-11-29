@@ -1,20 +1,12 @@
         //TODO
         //incorporate 8-128 character limit
-        //tie in user inputs to something other than prompts/confirms
         
         var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
         var special = ["+", "-", "&", "|", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":"];
 
-        //User input on which characters they want.
-        // var wantLower = confirm("Do you want to use lowercase characters?");
-        // var wantUpper = confirm("Do you want to use uppercase characters?");
-        // var wantNumber = confirm("Do you want to use numberical characters?");
-        // var wantSpecial = confirm("Do you want to use special characters?");
-        // var characterCount = prompt("How many characters do you want?")
-
-        //HARD CODED FOR TESTING - REMOVE AT THE END
+        //Set default values
         //Also need to code in that at least 2 should be selected
         var wantLower = true;
         var wantUpper = true;
@@ -25,6 +17,9 @@
         //Define var array as an empty array
         var array = [];
         
+        //Defines password variable
+        var password;
+
         //Builds var array according to user input of which characters requested
         function buildArray()   {
             //resets the array everytime you build
@@ -43,9 +38,9 @@
             }
         }
 
+        //builds initial array.
         buildArray();
 
-        //bug in this code. First character isn't decided by user input
         function randomnum()  {
             //Sets var randArray to a random index of 0-3; relates to arrays: lower, upper, number, special
             var randArray = Math.floor((Math.random() * array.length));
@@ -54,9 +49,6 @@
             //returns the value in var randArray with an index of var random
             return array[randArray][random];
         }
-
-        //Sets the first random character of the password to avoid undefined & NaN in the for loop
-        var password = randomnum();
         
         function resetPassword() {
             password = randomnum();
@@ -143,7 +135,11 @@
 
         //Generate Password Button
         genButton.addEventListener("click", function(){
+            //rebuilds the array based on the current character booleans
             buildArray();
+            //generates the first character based on current array.
+            password = randomnum();
+            //lengthens the password to input
             makePassword(characterCount);
         });
 
