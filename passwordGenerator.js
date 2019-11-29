@@ -40,6 +40,7 @@
 
         //builds initial array.
         buildArray();
+        
 
         function randomnum()  {
             //Sets var randArray to a random index of 0-3; relates to arrays: lower, upper, number, special
@@ -137,10 +138,17 @@
         genButton.addEventListener("click", function(){
             //rebuilds the array based on the current character booleans
             buildArray();
+            //checks that the array has at least 1 character array
+            if(array.length != 0){
             //generates the first character based on current array.
             password = randomnum();
             //lengthens the password to input
             makePassword(characterCount);
+            }
+            //if not character arrays are selected display the following
+            else{
+                document.querySelector("#passwordDisplay").innerText = "No characters selected";
+            }
         });
 
         //Copy Password Button
