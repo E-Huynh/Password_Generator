@@ -20,7 +20,7 @@
         var wantUpper = true;
         var wantNumber = true;
         var wantSpecial = true;
-        var characterCount = 10;
+        var characterCount = 30;
 
         //Define var array as an empty array
         var array = [];
@@ -72,7 +72,7 @@
         }
         
 
-        // Testing javascript
+        // Button functionality
         //HANDLES THE FUNCTIONALITY OF THE BUTTONS, WRITE MORE DRY CODE
         //INCLUDE PARAMETERS TO MAKE SURE AT LEAST 2 ARE SET TO TRUE
        
@@ -81,6 +81,8 @@
         var upperButton = document.querySelector(".upperbtn");
         var numberButton = document.querySelector(".numberbtn");
         var specialButton = document.querySelector(".specialbtn");
+        var genButton = document.querySelector(".genPassword");
+        var copyButton = document.querySelector(".copyPassword");
 
         //Lowercase character button functionality
         //tells JS to run function on a click
@@ -135,3 +137,16 @@
             wantSpecial = !wantSpecial;
             console.log("wantSpecial = " + wantSpecial);
         })
+
+        //Generate Password Button
+        genButton.addEventListener("click", function(){
+            makePassword(characterCount);
+        });
+
+        //Copy Password Button
+        copyButton.addEventListener("click", function(){
+            //pulls text from password display
+            var copyText = document.querySelector("#passwordDisplay").textContent;
+            // Figure out how to copy to clipboard
+            console.log(copyText);
+        });
