@@ -53,8 +53,19 @@
             characterCount = Number(document.getElementById("myRange").value)
         }
 
+        //controls the length display as you move the slider
         document.getElementById('myRange').ontouchmove = function() {
             document.querySelector(".lengthDisplay").innerText = "Length: " + this.value;
+        }
+
+        function textToClipboard (text) {
+            var dummy = document.createElement("textarea");
+            var passwordtext = document.querySelector("#passwordDisplay").textContent;
+            document.body.appendChild(dummy);
+            dummy.value = passwordtext;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
         }
         
         function resetPassword() {
@@ -159,8 +170,6 @@
 
         //Copy Password Button
         copyButton.addEventListener("click", function(){
-            //pulls text from password display
-            var copyText = document.querySelector("#passwordDisplay").textContent;
-            // Figure out how to copy to clipboard
-            console.log(copyText);
+            //pulls & copies text from password display
+            textToClipboard(password);
         });
