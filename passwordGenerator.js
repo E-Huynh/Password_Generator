@@ -1,5 +1,4 @@
         //TODO
-        //incorporate 8-128 character limit
         
         var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -7,12 +6,11 @@
         var special = ["+", "-", "&", "|", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":"];
 
         //Set default values
-        //Also need to code in that at least 2 should be selected
         var wantLower = true;
         var wantUpper = true;
         var wantNumber = true;
         var wantSpecial = true;
-        var characterCount = 30;
+        var characterCount = Number(document.getElementById("myRange").value);
 
         //Define var array as an empty array
         var array = [];
@@ -50,6 +48,10 @@
             //returns the value in var randArray with an index of var random
             return array[randArray][random];
         }
+
+        function determineLength()  {
+            characterCount = Number(document.getElementById("myRange").value)
+        }
         
         function resetPassword() {
             password = randomnum();
@@ -70,7 +72,6 @@
 
         // Button functionality
         //HANDLES THE FUNCTIONALITY OF THE BUTTONS, WRITE MORE DRY CODE
-        //INCLUDE PARAMETERS TO MAKE SURE AT LEAST 2 ARE SET TO TRUE
        
         //sets selector to the first button in a div
         var lowerButton = document.querySelector(".lowerbtn");
@@ -142,6 +143,7 @@
             if(array.length != 0){
             //generates the first character based on current array.
             password = randomnum();
+            determineLength();
             //lengthens the password to input
             makePassword(characterCount);
             }
