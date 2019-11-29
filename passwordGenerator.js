@@ -27,6 +27,8 @@
         
         //Builds var array according to user input of which characters requested
         function buildArray()   {
+            //resets the array everytime you build
+            array = [];
             if (wantLower)  {
                 array.push(lower);
             }
@@ -43,6 +45,7 @@
 
         buildArray();
 
+        //bug in this code. First character isn't decided by user input
         function randomnum()  {
             //Sets var randArray to a random index of 0-3; relates to arrays: lower, upper, number, special
             var randArray = Math.floor((Math.random() * array.length));
@@ -140,6 +143,7 @@
 
         //Generate Password Button
         genButton.addEventListener("click", function(){
+            buildArray();
             makePassword(characterCount);
         });
 
