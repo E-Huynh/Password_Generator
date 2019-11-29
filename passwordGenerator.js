@@ -52,6 +52,10 @@
         function determineLength()  {
             characterCount = Number(document.getElementById("myRange").value)
         }
+
+        document.getElementById('myRange').ontouchmove = function() {
+            document.querySelector(".lengthDisplay").innerText = "Length: " + this.value;
+        }
         
         function resetPassword() {
             password = randomnum();
