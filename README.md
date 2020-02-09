@@ -41,4 +41,4 @@ Javascript logic is explained via comments in passwordGenerator.js
 * Bootstrap 4
 * Javascript
 
-![Project Screenshot]()
+![Project Screenshot](https://github.com/E-Huynh/Password_Generator/blob/master/assets/pwgenerator.png?raw=true)
