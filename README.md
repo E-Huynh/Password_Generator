@@ -9,7 +9,7 @@ Erik.W.Huynh@Gmail.com
 
 [LinkedIn](https://www.linkedin.com/in/erik-huynh-228321196/)
 
-[Portfolio](https://e-huynh.github.io/updated_portfolio/)
+[Portfolio](https://e-huynh.github.io/portfolio-gram/)
 
 ## About This Project
 **Design to be viewed at Iphone X resolution (375px x 812px), although it works at higher resolutions. Just not as pretty.**
